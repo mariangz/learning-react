@@ -9,7 +9,7 @@ The UI is composed of small units (text boxes, buttons, images, etc) and React a
 `import React from "react"` We have to do it in every js file where we need it because every js file is a standalone module, so the content of one file (variables, functions, imports) don't affect other files.
 
 
-3. Creating an element
+3. Creating an [element](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html#elements-describe-the-tree)
 In JS we use `document.createElement` but in React we use a method `React.createElement`. The first one return a **DOM element** and the second one an **object**, so `React.createElement("p")` is equal to:
 ```js
 {
@@ -21,3 +21,4 @@ In JS we use `document.createElement` but in React we use a method `React.create
 }
 ```
 and that is because React works in a [virtual DOM](https://stackoverflow.com/questions/21965738/what-is-virtual-dom).
+If we use [console.dir](https://developer.mozilla.org/en-US/docs/Web/API/Console/dir) we can see all its properties and manipulate them. For example, if I want to create this element `<p>I'm learning React</p>` I'd do something like this `React.createElement("p", {}, "I'm learning React")` => `(React.createElement(type, options/Reactclass, children)`).
