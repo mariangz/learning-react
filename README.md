@@ -60,6 +60,9 @@ function Navbar() {
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
+
+// shorter
+const Welcome = ({name}) => <h1>Hello, {props.name}</h1>; // but in this case we can't use default export
 ```
 These ones are **funcional components** because the Component are definened as a function but also there are **Class Component**. We can "translate" them:
 
