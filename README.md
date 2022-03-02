@@ -7,8 +7,8 @@ The UI is composed of small units (text boxes, buttons, images, etc) and React a
 
 #### 02. How to install/start?
 
-~~ `npm install react` once installed we can import it:~~ 
-~~ `import React from "react"` We have to do it in every js file where we need it because every js file is a standalone module, so the content of one file (variables, functions, imports) don't affect other files.~~ 
+~~`npm install react` once installed we can import it:~~ 
+~~`import React from "react"` We have to do it in every js file where we need it because every js file is a standalone module, so the content of one file (variables, functions, imports) don't affect other files.~~ 
 
 As of React version 17, we don't need to import React anymore. And to start a project: `create-react-app name-app`.
 
