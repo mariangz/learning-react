@@ -62,7 +62,7 @@ function Welcome(props) {
 }
 
 // shorter
-const Welcome = ({name}) => <h1>Hello, {props.name}</h1>; // but in this case we can't use default export
+const Welcome = ({name}) => <h1>Hello, {name}</h1>; // but in this case we can't use default export
 ```
 These ones are **funcional components** because the Component are definened as a function but also there are **Class Component**. We can "translate" them:
 
