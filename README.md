@@ -69,7 +69,9 @@ import React, { Component } from "react";
 
 class Welcome extends Component {
   constructor(props) {
-    super(props) //why do we need super here? because we have a constructor (I have to go deeper here to understand 100%)
+    super(props) 
+    //why do we need super here? because we have a constructor,
+    //I'd like to go deeper to understand better this point
   }
 
   render() {
