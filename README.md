@@ -5,11 +5,12 @@
 It’s a JavaScript [library](https://www.freecodecamp.org/news/the-difference-between-a-framework-and-a-library-bd133054023f/) for building User Interfaces created and mostly maintained by Facebook. 
 The UI is composed of small units (text boxes, buttons, images, etc) and React allows us to combine them into reusable and nestable components and then rendering them and updating the UI whenever it changes. 
 
-#### 02. How to install?
+#### 02. How to install/start?
 
-`npm install react` once installed we can import it:
-`import React from "react"` We have to do it in every js file where we need it because every js file is a standalone module, so the content of one file (variables, functions, imports) don't affect other files.
+~~ `npm install react` once installed we can import it:~~ 
+~~ `import React from "react"` We have to do it in every js file where we need it because every js file is a standalone module, so the content of one file (variables, functions, imports) don't affect other files.~~ 
 
+As of React version 17, we don't need to import React anymore. And to start a project: `create-react-app name-app`.
 
 #### 03. Creating an element
 
@@ -113,4 +114,4 @@ function Home() {
 
 Two things to keep in mind:
 - We need to use parethensis when we use `return` because of [ASI](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi).
-- As I wrote [before](#03-creating-an-element), an `element` in React is `object` that is returned by `React.createElement()` and as we know we can not return many object in a function, what we can do is to return an object that contents many others, that is the reason because we need to wrap the element. We can use `<> </>` or  `<div> </div>`, it seems like the first is better because it doesn't add extra code ("div" tags). This has a name, [React.Fragment](https://reactjs.org/docs/fragments.html), so, third option: `<React.Fragment></React.Fragment>`.
+- As I wrote [before](#03-creating-an-element), an `element` in React is an `object` that is returned by `React.createElement()` and as we know we can not return many object in a function, what we can do is to return an object that contents many others, that is the reason because we need to wrap the element. We can use `<> </>` or  `<div> </div>`, the first is better because it doesn't add extra code ("div" tags). This has a name, [React.Fragment](https://reactjs.org/docs/fragments.html), so, third option: `<React.Fragment></React.Fragment>`.
