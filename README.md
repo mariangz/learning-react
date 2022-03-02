@@ -10,4 +10,14 @@ The UI is composed of small units (text boxes, buttons, images, etc) and React a
 
 
 3. Creating an element
-In JS we use `document.createElement` but in React we use a method `React.createElement`. The first one return a **DOM element** and thr last one an **object**
+In JS we use `document.createElement` but in React we use a method `React.createElement`. The first one return a **DOM element** and the second one an **object**, so `React.createElement("p")` is equal to:
+```js
+{
+  type: "p", 
+  ey: null, 
+  ref: null, 
+  props: Object, 
+  _owner: null…
+}
+```
+and that is because React works in a [virtual DOM](https://stackoverflow.com/questions/21965738/what-is-virtual-dom).
