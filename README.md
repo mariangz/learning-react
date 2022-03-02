@@ -45,10 +45,11 @@ To render and updating our elements we also need the **ReactDOM** package. We sp
 
 5. Component
 
-It's a function that returns one React Element. This element can have many children. Components are also UI building blocks (**elements** are also buildings block but the smallest ones in React) [and let us split the UI into independent, reusable pieces, and think about each piece in isolation](https://reactjs.org/docs/components-and-props.html). It accepts arbitrary inputs (called “props”).
+It's a function that returns one React Element. This element can have many children. Components are also UI building blocks (**elements** are also buildings blocks but the smallest ones in React) [and let us split the UI into independent, reusable pieces, and think about each piece in isolation](https://reactjs.org/docs/components-and-props.html). It accepts arbitrary inputs (called “props”).
 
+Note: we have to use capital letter to name them (UpperCamelCase): 
 ```js
-function Navbar() {
+export default function Navbar() {
     return (
         <ul>
             <li>Home</li>
@@ -57,7 +58,7 @@ function Navbar() {
     );
 }
 
-function Welcome(props) {
+export default function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
@@ -70,7 +71,7 @@ These ones are **funcional components** because the Component are definened as a
 // in this case, we should import the Component object
 import React, { Component } from "react";
 
-class Navbar extends Component {
+export default class Navbar extends Component {
   render() {
     return (
       <ul>
@@ -81,7 +82,7 @@ class Navbar extends Component {
   }
 }
 
-class Welcome extends Component {
+export default class Welcome extends Component {
   constructor(props) {
     super(props) 
     //why do we need super here? because we have a constructor,
@@ -93,3 +94,4 @@ class Welcome extends Component {
   }
 }
 ```
+
