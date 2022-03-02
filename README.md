@@ -61,3 +61,30 @@ function Navbar() {
     );
 }
 ```
+These ones are **funcional components** because the Componen are definened as a function but also there are **Class Component**. We can "translate" them:
+
+```js
+// in this case, we should import the Component object
+import React, { Component } from "react";
+
+class Welcome extends Component {
+  constructor(props) {
+    super(props) //why do we need super here? because we have a constructor (I have to go deeper here to understand 100%)
+  }
+
+  render() {
+    return  <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+class Navbar extends Component {
+  render() {
+    return (
+      <ul>
+        <li>Home</li>
+        <li>Contact</li>
+      </ul>
+    )
+  }
+}
+```
