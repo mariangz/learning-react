@@ -116,4 +116,4 @@ Two things to keep in mind:
 - We need to use parethensis when we use `return` because of [ASI](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi).
 - As I wrote [before](#03-creating-an-element), an `element` in React is an `object` that is returned by `React.createElement()` and as we know we can not return many object in a function, what we can do is to return an object that contents many others, that is the reason because we need to wrap the element. We can use `<> </>` or  `<div> </div>`, the first is better because it doesn't add extra code ("div" tags). This has a name, [React.Fragment](https://reactjs.org/docs/fragments.html), so, third option: `<React.Fragment></React.Fragment>`.
 
-#### 06. JSX
+#### 06. How To See Our 
