@@ -148,3 +148,23 @@ To keep in mind:
 - JSX is an object because that is what `React.createElement()` returns.
 - We can use JS expressions inside JSX by wrapping them with `{}` curly braces. They are like a "window into JS".
 - We can use self-closing tags (as long as the element doesn't contain children).
+
+
+#### 07. Props
+Props is an object. Attributes on Components get converted into that object. React Components use props to comunicate with each other and it's its only argument. Every Component can pass some information to its child component by giving them props. 
+```js
+// child component
+function User(props) {
+  return <h2>Hi, {props.user}</h2>; // it will receive information from its parent component
+}
+
+// parent component
+function Welcome() {
+  return (
+    <>
+      <h1>Welcome</h1>
+      <User name="Emilia"/>
+    </>
+  )
+}
+```
