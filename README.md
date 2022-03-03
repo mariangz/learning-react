@@ -134,7 +134,7 @@ ReactDOM.render(<App />, root); // <App /> must be imported
 ```
 
 
-#### 06. JSX
+#### 07. JSX
 We can say that JSX is syntactic sugar for `React.createElement()`. But what is it exactly? [It is a syntax extension to JavaScript](https://reactjs.org/docs/introducing-jsx.html). It allows us write HTML-like markup inside a JavaScript file.
 ```js
 const paragraph = <p>This is a React element</p> // JSX
@@ -150,7 +150,7 @@ To keep in mind:
 - We can use self-closing tags (as long as the element doesn't contain children).
 
 
-#### 07. Props
+#### 08. Props
 Props is an object. Attributes on Components get converted into that object. React Components use props to comunicate with each other and it's its only argument. Every Component can pass some information to its child component by giving them props. 
 ```js
 // child component
