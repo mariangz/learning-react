@@ -117,13 +117,13 @@ function Home() {
 }
 ```
 
-Two things to keep in mind:
+To keep in mind:
 - We need to use parethensis when we use `return` because of [ASI](https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi).
 - As I wrote [before](#03-creating-an-element), an `element` in React is an `object` that is returned by `React.createElement()` and as we know we can not return many object in a function, what we can do is to return an object that contents many others, that is the reason because we need to wrap the element. We can use `<> </>` or  `<div> </div>`, the first is better because it doesn't add extra code ("div" tags). This has a name, [React.Fragment](https://reactjs.org/docs/fragments.html), so, third option: `<React.Fragment></React.Fragment>`.
 
 
 #### 06. How To Visualize Elements
-To see our React Elements on our page we need `ReactDOM.render()` and we have to tell it *what* we want to render and *where*. Usually, we'll have a React Element like `<App />` that will contain many other, this is our *what*, and then we'll need a `<div id="root"></div>` element located in our `index.html`, we've to capture it and then use it (`ìndex.js`), this is our *where*, so:
+To see our React Elements on our page we need `ReactDOM.render()` and we have to tell it *what* we want to render and *where*. Usually, we'll have a React Element like `<App />` that will contain many other, this is our *what*, and then we'll need a `<div id="root"></div>` element located in our `index.html`, we've to capture it and then use it (`ìndex.js` my entry point), this is our *where*, so:
 ```js
 /// index.js
 import ReactDOM from 'react-dom';
