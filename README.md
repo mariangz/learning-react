@@ -147,3 +147,4 @@ We can see how [Babel compile our JSX element](https://babeljs.io/repl#?browsers
 To keep in mind: 
 - JSX is an object because that is what `React.createElement()` returns.
 - We can use JS expressions inside JSX by wrapping them with `{}` curly braces. They are like a "window into JS".
+- We can use self-closing tags (as long as the element doesn't contain children).
