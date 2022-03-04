@@ -168,3 +168,34 @@ function Welcome() {
   )
 }
 ```
+To keep in mind:
+- Keep Components pure. That means: they should never change any arguments (props) they receive.
+
+#### 09. Conditional Rendering
+We can conditionally do one thing instead of another, there are many ways to achieve that, here are some of them:
+
+- if - else
+```js
+if (user) {
+  return <p>Hi {user}</p>;
+} else {
+  return <p>Hi guest</p>;
+}
+```
+
+- ? ternary operator
+```js
+const user = "Emil"; // user is true, so it will show the name
+  return <p>Hi {user ? user : "guest"}</p>;
+} 
+```
+
+- && and operator
+```js
+const loggin = true; // because it's true, it'll show a welcome message
+  return (
+    <p>
+      {loggin && `You're welcome`  } 
+    </p>
+  );
+```
