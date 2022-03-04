@@ -185,7 +185,7 @@ if (user) {
 
 - ? ternary operator
 ```js
-const user = "Emil"; // user is true, so it will show the name
+const user = "Emil"; // user is truthy, so it will show the name
   return <p>Hi {user ? user : "guest"}</p>;
 } 
 ```
@@ -199,3 +199,20 @@ const loggin = true; // because it's true, it'll show a welcome message
     </p>
   );
 ```
+
+
+#### 10. Rendering List
+
+[We can render multiple components at once](https://reactjs.org/docs/lists-and-keys.html). To do it we use `map()` or `filter()` in case that we need to filter out our data.
+
+```js
+function List() {
+  const sports = [football, volley, tennis]; 
+  
+  const listSports = sports.map((sport) => <li key={sport}>sport</li>);  
+
+  return <ul>{listSports}</ul> // each <li> will be displayed correctly
+}
+```
+To keep in mind:
+- Each `<li key={uniqueID}></li>` needs an unique id to identify. It shouldn't be its index position and shouldn't be modified. 
