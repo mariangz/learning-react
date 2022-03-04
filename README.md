@@ -172,7 +172,7 @@ To keep in mind:
 - Keep Components pure. That means: they should never change any arguments (props) they receive.
 
 #### 09. Conditional Rendering
-We can conditionally do one thing instead of another, there are many ways to achieve that, here are some of them:
+We can conditionally render one thing instead of another, there are many ways to achieve that, here are some of them:
 
 - if - else
 ```js
