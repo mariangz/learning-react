@@ -253,10 +253,10 @@ function WelcomeButton({ message }) {
 
 function App() {
 	return (
-		<>
+		</div>
 			<h1>Hi!</h1>
 			<WelcomeButton message='Welcome!' />
-		</>
+		</div>
 	);
 }
 ```
