@@ -246,11 +246,8 @@ function WelcomeButton({ message }) {
 	}
 
 	return (
-		<button onClick={handleClick}>
-			{' '}
-			{/* step 2 */}
-			Click me to see the message
-		</button>
+		// step 2
+		<button onClick={handleClick}>Click me to see the message</button>
 	);
 }
 
