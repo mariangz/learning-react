@@ -228,4 +228,43 @@ To keep in mind:
 
 #### 11. CLSX
 
-I found it [this library](https://github.com/lukeed/clsx/) to work with classes more easily. We can't only give it normal values but also JS expressions and create conditional classes.
+I found [this library](https://github.com/lukeed/clsx/) to work with classes more easily. We can't only give it normal values but also JS expressions and create conditional classes.
+
+#### 11. Events
+
+Like in vanille JS, event handlers are functions that will be triggered in response to user interactions. How can we add them?
+
+1. Define a function inside our component.
+2. Pass it as a prop to the appropiate JSX tag.
+
+```js
+// step 1
+function WelcomeButton({ message }) {
+	function handleClick() {
+		alert(message); // they have access to the component’s props because there are inside the component
+	}
+
+	return (
+		<button onClick={handleClick}>
+			{' '}
+			{/* step 2 */}
+			Click me to see the message
+		</button>
+	);
+}
+
+function App() {
+	return (
+		<>
+			<h1>Hi!</h1>
+			<WelcomeButton message='Welcome!' />
+		</>
+	);
+}
+```
+
+To keep in mind:
+
+- We have to pass the name of the function and rather than calling it: `<button onClick={handleClick}>` and **not** `<button onClick={handleClick()}>`. In the first case, React will call the function only when we the user clicks the button, on the other example, React calls it during the rendering.
+- Naming convenion: `handleSubjectEvent` => `handleNameChange`
+- We can also define an event handler inline in the JSX (for short functions).
