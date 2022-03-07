@@ -241,7 +241,8 @@ Like in vanille JS, event handlers are functions that will be triggered in respo
 // step 1
 function WelcomeButton({ message }) {
 	function handleClick() {
-		alert(message); // they have access to the component’s props because there are inside the component
+		// they have access to the component’s props because there are inside the component
+		alert(message);
 	}
 
 	return (
