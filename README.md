@@ -265,6 +265,9 @@ function App() {
 
 To keep in mind:
 
-- We have to pass the name of the function and rather than calling it: `<button onClick={handleClick}>` and **not** `<button onClick={handleClick()}>`. In the first case, React will call the function only when we the user clicks the button, on the other example, React calls it during the rendering.
-- Naming convenion: `handleSubjectEvent` => `handleNameChange`
-- We can also define an event handler inline in the JSX (for short functions).
+- We have to pass the name of the function rather than calling it: `<button onClick={handleClick}>` and **not** `<button onClick={handleClick()}>`. In the first case, React will call the function only when we the user clicks the button, in the other example, React calls it during the rendering.
+- Naming convention: `handleSubjectEvent` => `handleNameChange`
+- We can also define an event handler inline in the JSX tag (for short functions).
+- [Event Propagation](https://beta.reactjs.org/learn/responding-to-events#event-propagation): as occurs in JS, event handlers will catch events from any children your component might have. We need to call `e.stopPropagation()` to keep the event from going up to its parent components. So, first we use this method and then call the function we want.
+
+#### 12. Hooks
