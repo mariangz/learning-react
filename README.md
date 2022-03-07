@@ -230,7 +230,7 @@ To keep in mind:
 
 I found [this library](https://github.com/lukeed/clsx/) to work with classes more easily. We can't only give it normal values but also JS expressions and create conditional classes.
 
-#### 11. Events
+#### 12. Events
 
 Like in vanille JS, event handlers are functions that will be triggered in response to user interactions. How can we add them?
 
@@ -269,4 +269,4 @@ To keep in mind:
 - [Event Propagation](https://beta.reactjs.org/learn/responding-to-events#event-propagation): as occurs in JS, event handlers will catch events from any children your component might have. We need to call `e.stopPropagation()` to keep the event from going up to its parent components. So, first we use this method and then call the function we want.
 - `e.stopPropagation()` ≠ `e.preventDefault()`.
 
-#### 12. State
+#### 13. State
