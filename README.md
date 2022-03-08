@@ -270,3 +270,5 @@ To keep in mind:
 - `e.stopPropagation()` ≠ `e.preventDefault()`.
 
 #### 13. State
+
+If a variable is defined inside a component with the intent to update it later on is a State variable. It can be updated from inside the component and when that happens, React re-render the component to the DOM.
