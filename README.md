@@ -271,12 +271,7 @@ To keep in mind:
 
 #### 13. State
 
-`State` is the way that React “remember” things: the current time, the current input value, etc. When we have a component with data that we want to update it and re-render it, we can not do it through local variables since they don't persist between renders (because React re-renders it does it from scratch, that means it doesn't see any changes in these variables) and their changes don't trigger renders. So, `useState` Hook helps us doing exactly what we need: persite data between renders and trigger them when the data are modified.
+`State` is the way that React “remember” things: the current time, the current input value, etc. When we have a component with data that we want to update it and re-render it, we can not do it through local variables since they don't persist between renders (because React re-renders it does it from scratch, that means it doesn't see any changes in these variables) and their changes don't trigger renders. So, `useState` Hook helps us doing exactly what we need:
 
-If a variable is defined inside a component with the intent to update it later on is a State variable. It can be updated from inside the component and when that happens, React re-render the component to the DOM.
-In order to work with States we should import `useState` which is one of React Hooks and use it and give it a value that it will have in the beginning `useState(initalValue)`.
-What does return `useState()`? An array where the first item is the current value of the state and the second one is the function to update it.
-
-```js
-const [hours, setHours] = useState(0);
-```
+- it gives us a variable to persite data between renders
+- and a function to update that variable and trigger renders.
