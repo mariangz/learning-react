@@ -334,3 +334,5 @@ function NameChildComponent(props) {
 	);
 }
 ```
+
+#### 16. Lifting State Up: How to share a state between two components
