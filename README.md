@@ -293,12 +293,44 @@ To keep in mind:
 When using methods like `.push` or `.unshift` what we are doing is changing the array, the same with objects if we do something like `property.a = newValue;`, and it's key when working with React not to **mutate** them. Every update that we have to do, we have to create a new value, leaving the old one untouched and that's because React needs a way to know if we've changed the `state`. So, we can say that if we want to update a value and then React triggers renders, we have to create a copy of our array/object and modify them, otherwise it doesn't work.
 
 ```js
-// some examples
+// some examples with array
 const [...users, newUser] // add
 const [removeUser, ...users] // remove the first one, I'll keep the rest of users
 const removeLastOne = users.slice(0, users.length - 1)
 
 // some examples with object
 const {...users, newUser: 'Emil'} // in this way we can add and update a key
-const {keyToRemove, ...rest}  = users
+const {keyToRemove, ...users}  = users
+```
+
+#### 15. How To Pass Down Function As Props
+
+A parent component can pass down functions as prop to its children. First, we have to make sure that the component which handles the `state` is the parent, that means it's a `stateful component`. And the child component would be a `stateless component`. Also, we've to pay attention to the name of these function props. An example:
+
+```js
+function Welcome() {
+	// parent component handles the state
+	const [name, setName] = useState('');
+
+	const handleNameChange = (event) => {
+		setName(event.target.value);
+	};
+
+	return (
+		<>
+			<h1>Welcome {name}</h1>
+			<NameChildComponent name={name} onNameChange={handleNameChange} />
+		</>
+	);
+}
+
+// child component
+function NameChildComponent(props) {
+	const { name, onNameChange } = props;
+	return (
+		<form>
+			<input value={name} onChange={onNameChange} />
+		</form>
+	);
+}
 ```
