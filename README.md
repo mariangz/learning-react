@@ -280,8 +280,25 @@ To keep in mind:
 const [currentValue, setCurrentValue] = useState(initialValue); // currentValue starts with the initialValue
 ```
 
+We can update immutable (they are unchangeable or 'read only') values in this way like numbers, strings and booleans. But what if we have objects or arrays? We'll see...
+
 To keep in mind:
 
 - Hooks should be called at the top level of the components.
 - Don't use them inside `if` (or any conditionals), loops, etc.
 - The parent component can’t change the state variables, they are private to the componenent where they were declared
+
+#### 14. Immutability: Update Arrays and Objects in State
+
+When using methods like `.push` or `.unshift` what we are doing is changing the array, the same with objects if we do something like `property.a = newValue;`, and it's key when working with React not to **mutate** them. Every update that we have to do, we have to create a new value, leaving the old one untouched and that's because React needs a way to know if we've changed the `state`. So, we can say that if we want to update a value and then React triggers renders, we have to create a copy of our array/object and modify them, otherwise it doesn't work.
+
+```js
+// some examples
+const [...users, newUser] // add
+const [removeUser, ...users] // remove the first one, I'll keep the rest of users
+const removeLastOne = users.slice(0, users.length - 1)
+
+// some examples with object
+const {...users, newUser: 'Emil'} // in this way we can add and update a key
+const {keyToRemove, ...rest}  = users
+```
