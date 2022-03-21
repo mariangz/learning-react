@@ -358,3 +358,14 @@ function ChildTwo({ count }) {}
 ```
 
 3. Now the `Parent` component became the 'source of truth' because it can control the `Child`'s `props`.
+
+#### 17. Functional State Update
+
+`state` updates in React are asynchronous and React batches several state updates for performance reasons, to avoid that we can pass a function to `setState` that allows us to perform _functional state update_. If we need to use the `previous state`, then we should use this kind of function to guarantee consistency and prevent unexpected bugs. The new value of state is whatever the call back function returns.
+
+```js
+setState(state + 1);
+
+// using function state update
+setState((prevState) => state + 1);
+```
