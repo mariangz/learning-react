@@ -109,12 +109,12 @@ import Welcome from './Welcome';
 import NavBar from './NavBar';
 
 function Home() {
-	return (
-		<>
-			<Welcome name='Juan' />
-			<NavBar />
-		</>
-	);
+  return (
+    <>
+      <Welcome name='Juan' />
+      <NavBar />
+    </>
+  );
 }
 ```
 
@@ -161,17 +161,17 @@ Props is an object. Attributes on Components get converted into that object. Rea
 ```js
 // child component
 function User(props) {
-	return <h2>Hi, {props.user}</h2>; // it will receive information from its parent component
+  return <h2>Hi, {props.user}</h2>; // it will receive information from its parent component
 }
 
 // parent component
 function Welcome() {
-	return (
-		<>
-			<h1>Welcome</h1>
-			<User name='Emilia' />
-		</>
-	);
+  return (
+    <>
+      <h1>Welcome</h1>
+      <User name='Emilia' />
+    </>
+  );
 }
 ```
 
@@ -187,9 +187,9 @@ We can conditionally render one thing instead of another, there are many ways to
 
 ```js
 if (user) {
-	return <p>Hi {user}</p>;
+  return <p>Hi {user}</p>;
 } else {
-	return <p>Hi guest</p>;
+  return <p>Hi guest</p>;
 }
 ```
 
@@ -214,11 +214,11 @@ return <p>{loggin && `You're welcome`}</p>;
 
 ```js
 function List() {
-	const sports = [football, volley, tennis];
+  const sports = [football, volley, tennis];
 
-	const listSports = sports.map((sport) => <li key={sport}>sport</li>);
+  const listSports = sports.map((sport) => <li key={sport}>sport</li>);
 
-	return <ul>{listSports}</ul>; // each <li> will be displayed correctly
+  return <ul>{listSports}</ul>; // each <li> will be displayed correctly
 }
 ```
 
@@ -309,30 +309,52 @@ A parent component can pass down functions as prop to its children. First, we ha
 
 ```js
 function Welcome() {
-	// parent component handles the state
-	const [name, setName] = useState('');
+  // parent component handles the state
+  const [name, setName] = useState('');
 
-	const handleNameChange = (event) => {
-		setName(event.target.value);
-	};
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
-	return (
-		<>
-			<h1>Welcome {name}</h1>
-			<NameChildComponent name={name} onNameChange={handleNameChange} />
-		</>
-	);
+  return (
+    <>
+      <h1>Welcome {name}</h1>
+      <NameChildComponent name={name} onNameChange={handleNameChange} />
+    </>
+  );
 }
 
 // child component
 function NameChildComponent(props) {
-	const { name, onNameChange } = props;
-	return (
-		<form>
-			<input value={name} onChange={onNameChange} />
-		</form>
-	);
+  const { name, onNameChange } = props;
+  return (
+    <form>
+      <input value={name} onChange={onNameChange} />
+    </form>
+  );
 }
 ```
 
 #### 16. Lifting State Up: How to share a state between two components
+
+When we want to coordinate two components or more and we want to update their states together what we can do what is move their state to their (closest) common parent, what is known as 'lifting state up'.
+So, for example, we have a parent component and two child components.
+
+1. First, we add state to the parent component
+
+```js
+// now state lives here
+function Parent() {
+  const [count, setCount] = useState(0);
+}
+```
+
+2. We should remove state from the child components and pass them as a prop.
+
+```js
+// we pass it down as a prop
+function ChildOne({ count }) {}
+function ChildTwo({ count }) {}
+```
+
+3. Now the `Parent` component became the 'source of truth' because it can control the `Child`'s `props`.
