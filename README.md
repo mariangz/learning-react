@@ -383,11 +383,12 @@ useEffect(() => {
             .then(data => setAllMemes(data))
     }, [])
 ```
-So, we can run an effect
-	1. Once, after component mounted
-	2. Once, after component mounted and once before unmounting
-	3. On every re-render
-	4. On certain re-renders
+So, we can run an effect:
+
+1. Once, after component mounted
+2. Once, after component mounted and once before unmounting
+3. On every re-render
+4. On certain re-renders
 
 
 
