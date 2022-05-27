@@ -397,3 +397,26 @@ that explains the following code:
 ```js
 <ThemeContext.Provider value={value}>{props.children}</ThemeContext.Provider>
 ```
+
+#### 18. useEffect
+
+It's another React Hook. This one "hooks" into the lifecycle of the component (when it mounts, when it unmounts, etc). It take two parameters: the first one is a function and the second one is optional and by default is `null`. `useEffect(effectCallback, dependencies)`.
+The dependencies parameter accepts an array of values that React will compare from the previous render to the next render. If they change, that means when are not equals, React calls the `useEffect` again. 
+Also, if we need to call the effect only once (for example when we are doing `fetch` calls to initialize the component) the second parameter should be an empty array.
+
+```js
+useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data))
+    }, [])
+```
+So, we can run an effect:
+
+1. Once, after component mounted
+2. Once, after component mounted and once before unmounting
+3. On every re-render
+4. On certain re-renders
+
+
+
