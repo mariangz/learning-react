@@ -365,7 +365,35 @@ function ChildTwo({ count }) {}
 
 ```js
 setState(state + 1);
+```
 
 // using function state update
 setState((prevState) => state + 1);
+
+#### 17. Dot Notation
+
+Since JSX is always converting your `<Component />` into a `React.createElement(Component, {})` call, it is possible to have an object that contains several components,
+
+```js
+const Buttons = {
+  Default: function (props) {
+    return <button className='btn-default'>{props.children}</button>;
+  },
+  Outline: function (props) {
+    return <button className='btn-outline'>{props.children}</button>;
+  },
+};
+
+<Buttons.Default>Login</Buttons.Default>
+<Buttons.Outline>Register</Buttons.Outline>
+
+// React.createElement calls as following:
+React.createElement(Buttons.Default, {}, 'Login');
+React.createElement(Buttons.Outline, {}, 'Register');
+```
+
+that explains the following code:
+
+```js
+<ThemeContext.Provider value={value}>{props.children}</ThemeContext.Provider>
 ```
